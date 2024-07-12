@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 setup(
     name="guolei-py3-images",
-    version="0.0.1",
+    version="0.0.2",
     description="郭磊 Images API",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -18,6 +18,9 @@ setup(
     keywors=["images", "image", "img", "pic", "picture"],
     packages=setuptools.find_packages('./'),
     install_requires=[
+        "addict",
+        "retrying",
+        "pydantic",
         "imgkit",
         "Pillow",
     ],
