@@ -15,10 +15,11 @@ setup(
     author="guolei",
     author_email="174000902@qq.com",
     license="MIT",
-    keywors=["images", "image","img","pic","picture"],
+    keywors=["images", "image", "img", "pic", "picture"],
     packages=setuptools.find_packages('./'),
     install_requires=[
-        "guolei-py3-requests",
+        "imgkit",
+        "Pillow",
     ],
     python_requires='>=3.0',
     zip_safe=False
