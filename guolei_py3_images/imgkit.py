@@ -9,7 +9,7 @@ from addict import Dict
 def str_to_image(
         output_path: str = "",
         content: str = "",
-        from_string_kwargs: dict = {},
+        imgkit_from_string_kwargs: dict = {},
 ):
     """
     字符串转图片
@@ -25,11 +25,11 @@ def str_to_image(
     if not isinstance(content, str):
         raise TypeError(f"content must be type str")
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    from_string_kwargs = Dict(from_string_kwargs)
-    from_string_kwargs.setdefault("config", None)
+    imgkit_from_string_kwargs = Dict(imgkit_from_string_kwargs)
+    imgkit_from_string_kwargs.setdefault("config", None)
     imgkit.from_string(
         output_path=output_path,
         string=content,
-        **from_string_kwargs,
+        **imgkit_from_string_kwargs,
     )
     return output_path
