@@ -16,7 +16,7 @@ from jsonschema import validate
 import imgkit
 
 
-def string_to_image(
+def from_string(
         output_path: str = "",
         string: str = "",
         imgkit_from_string_func_kwargs: dict = {}
