@@ -4,7 +4,7 @@ import string
 import unittest
 
 from guolei_py3_images.imgkit import str_to_image
-from guolei_py3_images.v1.imgkit import from_string
+from guolei_py3_images.library.imgkit import from_string
 
 
 class MyTestCase(unittest.TestCase):

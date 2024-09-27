@@ -19,7 +19,7 @@ import imgkit
 def from_string(
         output_path: str = "",
         string: str = "",
-        imgkit_from_string_func_kwargs: dict = {}
+        imgkit_from_string_kwargs: dict = {}
 ):
     """
     call imgkit.from_string(output_path=output_path, string=string, **imgkit_from_string_func_kwargs)
@@ -30,13 +30,12 @@ def from_string(
     """
     validate(instance=string, schema={"type": "string", "minLength": 1})
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    if not Draft202012Validator({"type": "boolean", "const": True}).is_valid(
-            isinstance(imgkit_from_string_func_kwargs, dict)):
-        imgkit_from_string_func_kwargs = {}
-    imgkit_from_string_func_kwargs = Dict(imgkit_from_string_func_kwargs)
+
+    imgkit_from_string_kwargs = Dict(imgkit_from_string_kwargs) if isinstance(imgkit_from_string_kwargs,
+                                                                              Dict) else Dict()
     imgkit.from_string(
         output_path=output_path,
         string=string,
-        **imgkit_from_string_func_kwargs.to_dict(),
+        **imgkit_from_string_kwargs.to_dict(),
     )
     return output_path
